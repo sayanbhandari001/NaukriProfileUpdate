@@ -26,7 +26,7 @@ public class updateFeatureOfNaukriAnotherProfile {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 
 	}
-	
+
 	@Given("I have all logged in setup and logged in to Naukri website")
 	public void i_have_all_logged_in_setup_and_logged_in_to_naukri_website() throws InterruptedException {
 		// Opening Browser
@@ -38,12 +38,12 @@ public class updateFeatureOfNaukriAnotherProfile {
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("bhandarisayan@gmail.com");
+				.sendKeys("**username**");
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys("Opps@sam*95");
+				.sendKeys("**password**");
 		// System.out.println(driver.getTitle());
 
 		// Login Button

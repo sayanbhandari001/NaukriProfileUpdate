@@ -25,7 +25,6 @@ public class updateFeatureOfNaukri {
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
-
 	}
 
 	@Given("I have all system setup and logged in to Naukri\\(India) website")
@@ -39,12 +38,12 @@ public class updateFeatureOfNaukri {
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("sayanbhandari007@gmail.com");
+				.sendKeys("**username**");
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys("Opps@sam*95");
+				.sendKeys("**password**");
 		// System.out.println(driver.getTitle());
 
 		// Login Button

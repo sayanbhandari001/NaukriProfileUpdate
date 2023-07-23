@@ -11,10 +11,10 @@ import io.cucumber.junit.CucumberOptions;
 		features = {"/NaukriProfileUpdateViaBDD/src/test/java/features/" },
 		glue = { "stepDefenitions"},
 		publish = true,
-		monochrome=true
-		//tags = ("@naukriIndiaUpdate")
+		monochrome=true,
+		tags = ("@naukriIndiaUpdate")
 		)
-
+ 
 public class CucumberTestRunner {
 	
 }
