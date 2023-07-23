@@ -10,14 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.utility.BrowserUtility;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class updateFeatureOfNaukriAnotherProfile {
-
-	WebDriver driver;
+	
+	public static WebDriver driver;
 
 	@Before
 	public void openBrowser() {
@@ -25,24 +26,33 @@ public class updateFeatureOfNaukriAnotherProfile {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	}
+	
+	@After
+    public void closeBrowser() {
+
+        driver.quit();
+    }
 
 	@Given("I have all logged in setup and logged in to Naukri website")
 	public void i_have_all_logged_in_setup_and_logged_in_to_naukri_website() throws InterruptedException {
+
+		this.driver();
+
 		// Opening Browser
 		driver.get("https://www.naukri.com/");
 
 		// Login Button
 		driver.findElement(By.xpath("//a[@href='https://login.naukri.com/nLogin/Login.php']")).click();
- 
+
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("**username**");
+				.sendKeys("bhandarisayan@gmail.com");
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys("**password**");
+				.sendKeys("Opps@sam*95");
 		// System.out.println(driver.getTitle());
 
 		// Login Button
@@ -61,6 +71,11 @@ public class updateFeatureOfNaukriAnotherProfile {
 		} else {
 			System.out.println("Opps!!! ----   Sorry Couldn't login   --- Failure");
 		}
+	}
+
+	private void driver() {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Given("have my profile section open with 2nd login")
@@ -120,6 +135,6 @@ public class updateFeatureOfNaukriAnotherProfile {
 	public void check_whether_my_profile_is_updated() {
 		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
 				+ "Quiting the System Automation" + "Thanks and goodbye");
-		driver.quit();
+
 	}
 }

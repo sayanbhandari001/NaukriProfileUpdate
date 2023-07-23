@@ -18,7 +18,7 @@ import io.cucumber.java.en.When;
 
 public class updateFeatureOfNaukri {
 
-	WebDriver driver;
+	public static WebDriver driver;
 
 	@Before
 	public void openBrowser() {
@@ -26,6 +26,11 @@ public class updateFeatureOfNaukri {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	}
+	
+	@After
+    public void closeBrowser() {
+        driver.quit();
+    }
 
 	@Given("I have all system setup and logged in to Naukri\\(India) website")
 	public void i_have_all_system_setup_and_logged_in_to_naukri_india_website() throws InterruptedException {
@@ -38,12 +43,12 @@ public class updateFeatureOfNaukri {
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("**username**");
+				.sendKeys("sayanbhandari007@gmail.com");
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys("**password**");
+				.sendKeys("Opps@sam*95");
 		// System.out.println(driver.getTitle());
 
 		// Login Button
@@ -123,8 +128,5 @@ public class updateFeatureOfNaukri {
 				+ "Quiting the System Automation" + "Thanks and goodbye");
 	}
 
-	@After
-	public void closeBrowser() {
-		driver.quit();
-	}
+	
 }

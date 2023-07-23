@@ -8,11 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin = { "html:cucumber-reports/htmlreprt.html", "json:cucumber-reports/report.json" },
-		features = {"/NaukriProfileUpdateViaBDD/src/test/java/features/" },
+		features = {"src/test/java/features"},
 		glue = { "stepDefenitions"},
 		publish = true,
 		monochrome=true,
-		tags = ("@naukriIndiaUpdate")
+		tags= ("@naukriIndiaUpdate")
 		)
  
 public class CucumberTestRunner {
