@@ -10,13 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.utility.BrowserUtility;
 
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class updateFeatureOfNaukri {
+public class updateFeatureOfNaukriAnotherProfile {
 
 	WebDriver driver;
 
@@ -27,9 +26,9 @@ public class updateFeatureOfNaukri {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 
 	}
-
-	@Given("I have all system setup and logged in to Naukri\\(India) website")
-	public void i_have_all_system_setup_and_logged_in_to_naukri_india_website() throws InterruptedException {
+	
+	@Given("I have all logged in setup and logged in to Naukri website")
+	public void i_have_all_logged_in_setup_and_logged_in_to_naukri_website() throws InterruptedException {
 		// Opening Browser
 		driver.get("https://www.naukri.com/");
 
@@ -39,7 +38,7 @@ public class updateFeatureOfNaukri {
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("sayanbhandari007@gmail.com");
+				.sendKeys("bhandarisayan@gmail.com");
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
@@ -65,8 +64,8 @@ public class updateFeatureOfNaukri {
 		}
 	}
 
-	@Given("have my profile section open")
-	public void have_my_profile_section_open() {
+	@Given("have my profile section open with 2nd login")
+	public void have_my_profile_section_open_with_2nd_login() {
 		// Redirecting to profile page page
 		driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
 
@@ -75,8 +74,8 @@ public class updateFeatureOfNaukri {
 				.click();
 	}
 
-	@When("I check for about section and validate whether updated with or without dot")
-	public void i_check_for_about_section_and_validate_whether_updated_with_or_without_dot() {
+	@When("I check for about section and validate whether updated")
+	public void i_check_for_about_section_and_validate_whether_updated() {
 		String resumeHeadline = "Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry";
 		String resumeHeadlineText = driver
 				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
@@ -101,8 +100,8 @@ public class updateFeatureOfNaukri {
 
 	}
 
-	@Then("I add dot if not available or remove if already available")
-	public void i_add_dot_if_not_available_or_remove_if_already_available() throws InterruptedException {
+	@Then("I add dots if not available or remove if already available")
+	public void i_add_dots_if_not_available_or_remove_if_already_available() throws InterruptedException {
 		driver.findElement(By.xpath(
 				"//form[@name='resumeHeadlineForm']//div[@class='row form-actions']//div//button[@type='submit' and contains(text(),'Save')]"))
 				.click();
@@ -118,14 +117,10 @@ public class updateFeatureOfNaukri {
 		System.out.println(updatedURL);
 	}
 
-	@Then("check whether my profile is updated or not")
-	public void check_whether_my_profile_is_updated_or_not() {
+	@Then("check whether my profile is updated")
+	public void check_whether_my_profile_is_updated() {
 		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
 				+ "Quiting the System Automation" + "Thanks and goodbye");
-	}
-
-	@After
-	public void closeBrowser() {
 		driver.quit();
 	}
 }
