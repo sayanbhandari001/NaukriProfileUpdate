@@ -39,4 +39,12 @@ public class BrowserUtility {
 			}
 	}
 	
+	public static void openBrowser() {
+		
+		
+	}
+	public static void closeBrowser() {
+		
+	}
+	
 }

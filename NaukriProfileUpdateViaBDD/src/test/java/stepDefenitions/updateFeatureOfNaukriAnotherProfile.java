@@ -16,15 +16,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class updateFeatureOfNaukriAnotherProfile {
+public class updateFeatureOfNaukriAnotherProfile{
 	
-	public static WebDriver driver;
+	WebDriver driver;
 
 	@Before
 	public void openBrowser() {
-		driver = BrowserUtility.supplyDriver("chrome");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+	driver = BrowserUtility.supplyDriver("chrome");
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	}
 	
 	@After
@@ -35,8 +35,8 @@ public class updateFeatureOfNaukriAnotherProfile {
 
 	@Given("I have all logged in setup and logged in to Naukri website")
 	public void i_have_all_logged_in_setup_and_logged_in_to_naukri_website() throws InterruptedException {
-
-		this.driver();
+	
+		
 
 		// Opening Browser
 		driver.get("https://www.naukri.com/");
@@ -73,10 +73,6 @@ public class updateFeatureOfNaukriAnotherProfile {
 		}
 	}
 
-	private void driver() {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Given("have my profile section open with 2nd login")
 	public void have_my_profile_section_open_with_2nd_login() {

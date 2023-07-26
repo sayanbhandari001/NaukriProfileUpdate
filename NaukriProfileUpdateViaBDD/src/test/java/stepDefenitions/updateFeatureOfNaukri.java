@@ -18,8 +18,8 @@ import io.cucumber.java.en.When;
 
 public class updateFeatureOfNaukri {
 
-	public static WebDriver driver;
-
+	WebDriver driver;
+	
 	@Before
 	public void openBrowser() {
 		driver = BrowserUtility.supplyDriver("chrome");
@@ -29,8 +29,10 @@ public class updateFeatureOfNaukri {
 	
 	@After
     public void closeBrowser() {
+
         driver.quit();
     }
+	
 
 	@Given("I have all system setup and logged in to Naukri\\(India) website")
 	public void i_have_all_system_setup_and_logged_in_to_naukri_india_website() throws InterruptedException {
