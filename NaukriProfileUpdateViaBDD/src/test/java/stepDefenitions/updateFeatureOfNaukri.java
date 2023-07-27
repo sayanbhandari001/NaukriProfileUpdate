@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.utility.BrowserUtility;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,22 +18,14 @@ public class updateFeatureOfNaukri {
 
 	WebDriver driver;
 	
-	@Before
-	public void openBrowser() {
+	@Given("I have all system setup and logged in to Naukri\\(India) website")
+	public void i_have_all_system_setup_and_logged_in_to_naukri_india_website() throws InterruptedException {
+		
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
-	}
-	
-	@After
-    public void closeBrowser() {
-
-        driver.quit();
-    }
-	
-
-	@Given("I have all system setup and logged in to Naukri\\(India) website")
-	public void i_have_all_system_setup_and_logged_in_to_naukri_india_website() throws InterruptedException {
+		
+		
 		// Opening Browser
 		driver.get("https://www.naukri.com/");
 
@@ -44,8 +34,10 @@ public class updateFeatureOfNaukri {
 
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
+		String username = "sayanbhandari007@gmail.com";
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"))
-				.sendKeys("sayanbhandari007@gmail.com");
+				.sendKeys(username);
+		System.out.println("Username used here is " + username);
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
@@ -128,7 +120,9 @@ public class updateFeatureOfNaukri {
 	public void check_whether_my_profile_is_updated_or_not() {
 		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
 				+ "Quiting the System Automation" + "Thanks and goodbye");
+		driver.quit();
 	}
-
+	
+	
 	
 }
