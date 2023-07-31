@@ -17,7 +17,7 @@ Scenario: Update user Naukri profile using another login
   Then I add dots if not available or remove if already available
   And check whether my profile is updated
 
-
+@naukriUpdateInternational
 Scenario: Update user GulfNaukri profile
   Given I have all logged in setup and logged in to GulfNaukri website
   And have my profile section open with GulfNaukri login

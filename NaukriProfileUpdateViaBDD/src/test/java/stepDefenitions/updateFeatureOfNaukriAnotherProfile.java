@@ -10,16 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.utility.BrowserUtility;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class updateFeatureOfNaukriAnotherProfile{
+public class updateFeatureOfNaukriAnotherProfile {
 	
 	WebDriver driver;
-		
 	
 	
 	@Given("I have all logged in setup and logged in to Naukri website")
@@ -123,9 +120,10 @@ public class updateFeatureOfNaukriAnotherProfile{
 
 	@Then("check whether my profile is updated")
 	public void check_whether_my_profile_is_updated() {
+		driver.quit();
 		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
 				+ "Quiting the System Automation" + "Thanks and goodbye");
-		driver.quit();
+		
 	}
 	
 }

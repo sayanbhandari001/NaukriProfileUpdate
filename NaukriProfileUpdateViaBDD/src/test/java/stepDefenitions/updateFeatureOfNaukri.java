@@ -25,7 +25,6 @@ public class updateFeatureOfNaukri {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 		
-		
 		// Opening Browser
 		driver.get("https://www.naukri.com/");
 

@@ -1,6 +1,7 @@
 package stepDefenitions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,10 +9,11 @@ import io.cucumber.java.en.When;
 
 public class gulfUpdate {
 
-	WebDriver driver;
+	WebDriver driver = new ChromeDriver();
 	
 	@Given("I have all logged in setup and logged in to GulfNaukri website")
 	public void i_have_all_logged_in_setup_and_logged_in_to_gulf_naukri_website() {
+		driver.get("https://www.google.com");
 	}
 
 	@Given("have my profile section open with GulfNaukri login")

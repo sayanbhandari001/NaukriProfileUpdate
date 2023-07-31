@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue = { "stepDefenitions"},
 		publish = true,
 		monochrome=true,
-		tags= ("@naukriIndiaUpdate")
+		tags= "@naukriIndiaUpdate or @naukriUpdateInternational" 
 		)
  
 public class CucumberTestRunner {
