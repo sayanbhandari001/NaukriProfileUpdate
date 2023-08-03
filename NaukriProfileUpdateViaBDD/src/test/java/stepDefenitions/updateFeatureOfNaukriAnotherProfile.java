@@ -18,10 +18,8 @@ public class updateFeatureOfNaukriAnotherProfile {
 	
 	WebDriver driver;
 	
-	
 	@Given("I have all logged in setup and logged in to Naukri website")
 	public void i_have_all_logged_in_setup_and_logged_in_to_naukri_website() throws InterruptedException {
-	
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
