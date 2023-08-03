@@ -33,7 +33,7 @@ Given I have logged in setup and logged in to Naukri website
   Then I update bio with new data
   And check whether my profile is updated as of today
   
-  Examples: 
+  Examples:
   
   		|	username	|	password	|
       | "sayanbhandari007@gmail.com" | "" |
