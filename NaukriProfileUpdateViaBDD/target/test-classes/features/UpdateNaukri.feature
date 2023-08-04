@@ -36,7 +36,7 @@ Given I have logged in setup and logged in to Naukri website
   Examples:
   
   		|	username	|	password	|
-      | "sayanbhandari007@gmail.com" | "" |
-     	| "bhandarisayan@gmail.com" | "" |
-      | "sayanbhandari001@gmail.com" | "" |
+      | "sayanbhandari007@gmail.com" | "Opps@sam*95" |
+     	| "bhandarisayan@gmail.com" | "Opps@sam*95" |
+      | "sayanbhandari001@gmail.com" | "Opps@sam*95" |
 

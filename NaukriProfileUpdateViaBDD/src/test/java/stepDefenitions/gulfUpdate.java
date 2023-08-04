@@ -3,11 +3,13 @@ package stepDefenitions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.utility.baseClass;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class gulfUpdate {
+public class gulfUpdate extends baseClass{
 
 	WebDriver driver = new ChromeDriver();
 	
