@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
 		tags = "@naukriIndiaUpdate"
 		)
  
-public class CucumberTestRunner {
+public class TestRunnerCucumber {
 	
 }
 //tags = "@naukriIndiaUpdate and @naukriUpdateInternational"
