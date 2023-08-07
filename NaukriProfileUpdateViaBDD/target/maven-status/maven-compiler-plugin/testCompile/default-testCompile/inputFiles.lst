@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\com\utility\BrowserUtility.java
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\updateFeatureOfNaukriAnotherProfile.java
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\com\utility\baseClass.java
@@ -5,3 +6,12 @@ D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateVi
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\gulfUpdate.java
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\runCakeTest\CucumberTestRunner.java
 D:\01.eclipse-jee-2022-09-R-win32-x86_64\eclipse-workspace\NaukriProfileUpdateViaBDD\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\multipleLogins.java
+=======
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\com\utility\BrowserUtility.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\runCakeTest\TestRunnerCucumber.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\updateFeatureOfNaukri.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\gulfUpdate.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\updateFeatureOfNaukriAnotherProfile.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\com\utility\baseClass.java
+C:\Users\sayan.bhandari\git\NaukriProfileUpdate\NaukriProfileUpdateViaBDD\src\test\java\stepDefenitions\multipleLogins.java
+>>>>>>> branch 'main' of https://github.com/sayanbhandari001/NaukriProfileUpdate.git
