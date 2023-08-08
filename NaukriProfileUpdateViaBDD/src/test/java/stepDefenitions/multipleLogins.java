@@ -20,7 +20,7 @@ public class multipleLogins {
 
 	@Given("I have logged in setup and logged in to Naukri website")
 	public void i_have_logged_in_setup_and_logged_in_to_naukri_website() {
-		driver = BrowserUtility.supplyDriver("chrome");
+		driver = BrowserUtility.supplyDriver("firefox");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 
