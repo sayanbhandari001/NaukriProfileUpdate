@@ -16,9 +16,9 @@ public class BrowserUtility {
 	{
 			if(browser.equals("chrome"))
 			{
-				ChromeOptions co = new ChromeOptions();
-				co.setBrowserVersion("116");
-				return new ChromeDriver(co);
+				//ChromeOptions co = new ChromeOptions();
+				//co.setBrowserVersion("116");
+				return new ChromeDriver();
 			}
 			else if(browser.equals("firefox"))
 			{
