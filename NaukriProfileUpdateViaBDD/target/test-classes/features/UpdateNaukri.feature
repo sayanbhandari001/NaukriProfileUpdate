@@ -16,7 +16,7 @@ Background:
   #When I check for about section and validate whether updated
   #Then I add dots if not available or remove if already available
   #And check whether my profile is updated
-
+ 
 @naukriUpdateInternational
 Scenario: Update user GulfNaukri profile
   Given I have all logged in setup and logged in to GulfNaukri website
