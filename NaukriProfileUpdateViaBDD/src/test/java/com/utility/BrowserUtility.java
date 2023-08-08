@@ -9,44 +9,41 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 public class BrowserUtility {
 
-	public static WebDriver supplyDriver(String browser)
-	{
-			if(browser.equals("chrome"))
-			{
-				//ChromeOptions co = new ChromeOptions();
-				//co.setBrowserVersion("116");
-				return new ChromeDriver();
-			}
-			else if(browser.equals("firefox"))
-			{
-				WebDriverManager.firefoxdriver().setup();
-				return new FirefoxDriver();
-			}
-			else if(browser.equals("ie"))
-			{
-				WebDriverManager.iedriver().setup();
-				return new InternetExplorerDriver();
-			}
-			else if(browser.equals("edge"))
-			{
-				WebDriverManager.edgedriver().setup();
-				return new EdgeDriver();
-			}
-			else
-			{
-				return null;
-			}
+	public static WebDriver supplyDriver(String browser) {
+		if (browser.equals("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("window-size=1400,1500");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--no-sandbox");
+			options.addArguments("start-maximized");
+			options.addArguments("enable-automation");
+			options.addArguments("--disable-infobars");
+			options.addArguments("--disable-dev-shm-usage");
+			// ChromeOptions co = new ChromeOptions();
+			// co.setBrowserVersion("116");
+			return new ChromeDriver();
+		} else if (browser.equals("firefox")) {
+
+			return new FirefoxDriver();
+		} else if (browser.equals("ie")) {
+			WebDriverManager.iedriver().setup();
+			return new InternetExplorerDriver();
+		} else if (browser.equals("edge")) {
+			WebDriverManager.edgedriver().setup();
+			return new EdgeDriver();
+		} else {
+			return null;
+		}
 	}
-	
+
 	public static void openBrowser() {
-		
-		
+
 	}
+
 	public static void closeBrowser() {
-		
+
 	}
-	
+
 }
