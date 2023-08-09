@@ -1,5 +1,3 @@
-com\utility\BrowserUtility.class
 com\utility\baseClass.class
-stepDefenitions\multipleLogins.class
 runCakeTest\TestRunnerCucumber.class
 stepDefenitions\gulfUpdate.class
