@@ -25,7 +25,8 @@ public class BrowserUtility {
 			// Set version 116
 			ChromeOptions co = new ChromeOptions();
 			co.setBrowserVersion("116");
-			return new ChromeDriver();
+			co.addArguments("--headless=new");
+			return new ChromeDriver(co);
 		} else if (browser.equals("firefox")) {
 			return new FirefoxDriver();
 		} else if (browser.equals("ie")) {
