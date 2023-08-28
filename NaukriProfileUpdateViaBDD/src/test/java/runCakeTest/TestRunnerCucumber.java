@@ -12,8 +12,8 @@ import io.cucumber.junit.CucumberOptions;
 		glue = { "stepDefenitions"},
 		publish = true,
 		monochrome=true,
-		dryRun=true,
-		tags = "@naukriInternationalUpdate"
+		dryRun=false,
+		tags = "@naukriIndiaUpdate"
 		)
  
 public class TestRunnerCucumber {

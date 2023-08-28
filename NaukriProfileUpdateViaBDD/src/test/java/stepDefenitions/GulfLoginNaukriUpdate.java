@@ -18,7 +18,7 @@ public class GulfLoginNaukriUpdate {
 
 	WebDriver driver;
 
-	@Given("I have logged in setup and logged in to gulfNaukri website")
+	@Given("^I have logged in setup and logged in to gulfNaukri website$")
 	public void i_have_logged_in_setup_and_logged_in_to_gulf_naukri_website() {
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
@@ -60,7 +60,7 @@ public class GulfLoginNaukriUpdate {
 				.click();
 	}
 
-	@When("I check for gulfprofile section and validate whether updated")
+	@When("^I check for gulfprofile section and validate whether updated$")
 	public void i_check_for_gulfprofile_section_and_validate_whether_updated() {
 		String resumeHeadline = "Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry";
 		String resumeHeadlineText = driver
@@ -85,7 +85,7 @@ public class GulfLoginNaukriUpdate {
 		}
 	}
 
-	@Then("I update gulfbio with new data")
+	@Then("^I update gulfbio with new data$")
 	public void i_update_gulfbio_with_new_data() {
 		driver.findElement(By.xpath(
 				"//form[@name='resumeHeadlineForm']//div[@class='row form-actions']//div//button[@type='submit' and contains(text(),'Save')]"))
@@ -101,7 +101,7 @@ public class GulfLoginNaukriUpdate {
 		System.out.println(updatedURL);
 	}
 
-	@Then("check whether my gulfprofile is updated as of today")
+	@Then("^check whether my gulfprofile is updated as of today$")
 	public void check_whether_my_gulfprofile_is_updated_as_of_today() {
 		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
 				+ "Quiting the System Automation" + "Thanks and goodbye");

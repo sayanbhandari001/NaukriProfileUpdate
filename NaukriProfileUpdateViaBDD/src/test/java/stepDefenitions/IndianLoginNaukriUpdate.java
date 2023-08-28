@@ -33,16 +33,16 @@ public class IndianLoginNaukriUpdate {
 	}
 
 	@Given("have my profile section open with {string} login and {string}")
-	public void have_my_profile_section_open_with_login_and(String string, String string2) throws InterruptedException {
+	public void have_my_profile_section_open_with_login_and(String Username, String Password) throws InterruptedException {
 		// Username
 		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
-		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).sendKeys(string);
-		System.out.println("Username used here is " + string);
+		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).sendKeys(Username);
+		System.out.println("Username used here is " + Username);
 
 		// Password
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
 		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys(string2);
+				.sendKeys(Password);
 
 		WebDriverWait loginButtonwait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		loginButtonwait.until(ExpectedConditions.elementToBeClickable(By
