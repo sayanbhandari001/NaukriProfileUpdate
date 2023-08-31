@@ -17,7 +17,7 @@ public class GulfUpdateNaukriProfile {
 
 	WebDriver driver;
 
-	@Given("I have logged in setup and logged in to gulfNaukri website")
+	@Given("^I have logged in setup and logged in to gulfNaukri website$")
 	public void i_have_logged_in_setup_and_logged_in_to_gulf_naukri_website() {
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
@@ -49,7 +49,7 @@ public class GulfUpdateNaukriProfile {
 
 		// Validate Title of page
 		String ActualTitle = driver.getTitle();
-		String ExpectedTitle = "My Home - Naukrigulf.com";
+		String ExpectedTitle = "Jobs in Gulf - Jobs in Middle East - Job Search - Job Vacancies - Naukrigulf.com";
 		Assert.assertEquals(ActualTitle, ExpectedTitle);
 		if (ActualTitle.equals(ExpectedTitle)) {
 			System.out.println("--------------System logged in successfully, Automating further--------------");
@@ -67,7 +67,7 @@ public class GulfUpdateNaukriProfile {
 		Thread.sleep(5000);
 	}
 
-	@When("I check for gulfprofile section and validate whether updated")
+	@When("^I check for gulfprofile section and validate whether updated$")
 	public void i_check_for_gulfprofile_section_and_validate_whether_updated() {
 
 		// validate text
@@ -90,7 +90,8 @@ public class GulfUpdateNaukriProfile {
 
 	}
 
-	@Then("I update gulfbio with new data")
+	@SuppressWarnings("unlikely-arg-type")
+	@Then("^I update gulfbio with new data$")
 	public void i_update_gulfbio_with_new_data() {
 		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		WebElement toastmessage = driver.findElement(By.xpath("//span[@class='Toaster__manager-top-right']"));
@@ -98,11 +99,14 @@ public class GulfUpdateNaukriProfile {
 		Assert.assertNotNull(toastmessage);
 		WebElement toastPanelReceivedMessage = driver.findElement(By.xpath(
 				"//div[@class='Toaster__message-wrapper']//h4[@class='title no-message'][normalize-space()='Profile updated successfully']"));
-		toastPanelReceivedMessage.getText();
+		String toastPanelReceivedMessageValidation = toastPanelReceivedMessage.getText();
+		System.out.println();
 
 		String toastPanelExpectedMessage = "Profile updated successfully";
 
-		if (toastPanelReceivedMessage.equals(toastPanelExpectedMessage)) {
+		Assert.assertEquals(toastPanelReceivedMessageValidation, toastPanelExpectedMessage);
+		
+		if (toastPanelReceivedMessageValidation.equals(toastPanelExpectedMessage)) {
 			System.out.println("-----------------Save Successfull------------------------");
 
 		} else {
@@ -111,10 +115,10 @@ public class GulfUpdateNaukriProfile {
 
 	}
 
-	@Then("check whether my gulfprofile is updated as of today")
+	@Then("^check whether my gulfprofile is updated as of today$")
 	public void check_whether_my_gulfprofile_is_updated_as_of_today() {
-		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
-				+ "Quiting the System Automation" + "Thanks and goodbye");
+		System.out.println("''''''''''''''''''''''''No more action Pending '''''''''''''''''' \n"
+				+ "\n Quiting the System Automation" + "\n Thanks and goodbye");
 		driver.quit();
 	}
 

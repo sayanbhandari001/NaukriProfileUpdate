@@ -1,5 +1,5 @@
-package stepDefenitions;
-
-public class resumeUploadtoNaukrProfiles {
-
-}
+//package stepDefenitions;
+//
+//public class resumeUploadtoNaukrProfiles {
+//
+//}

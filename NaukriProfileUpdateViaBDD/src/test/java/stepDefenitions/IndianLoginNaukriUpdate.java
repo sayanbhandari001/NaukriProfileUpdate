@@ -117,8 +117,8 @@ public class IndianLoginNaukriUpdate {
 
 	@Then("check whether my profile is updated as of today")
 	public void check_whether_my_profile_is_updated_as_of_today() {
-		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''"
-				+ "Quiting the System Automation" + "Thanks and goodbye");
+		System.out.println("''''''''''''''''''''''''No more action Pending ''''''''''''''''''\n"
+				+ "\n Quiting the System Automation" + "\n Thanks and goodbye");
 		driver.quit();
 	}
 
