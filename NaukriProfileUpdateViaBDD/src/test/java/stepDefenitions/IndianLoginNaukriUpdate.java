@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,16 +34,20 @@ public class IndianLoginNaukriUpdate {
 	}
 
 	@Given("have my profile section open with {string} login and {string}")
-	public void have_my_profile_section_open_with_login_and(String Username, String Password) throws InterruptedException {
+	public void have_my_profile_section_open_with_login_and(String Username, String Password)
+			throws InterruptedException {
 		// Username
-		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).clear();
-		driver.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']")).sendKeys(Username);
+		WebElement usenameLogin = driver
+				.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"));
+		usenameLogin.clear();
+		usenameLogin.sendKeys(Username);
 		System.out.println("Username used here is " + Username);
 
 		// Password
-		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']")).clear();
-		driver.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"))
-				.sendKeys(Password);
+		WebElement passwordLogin = driver
+				.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"));
+		passwordLogin.clear();
+		passwordLogin.sendKeys(Password);
 
 		WebDriverWait loginButtonwait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		loginButtonwait.until(ExpectedConditions.elementToBeClickable(By
@@ -62,6 +67,7 @@ public class IndianLoginNaukriUpdate {
 		// Redirecting to profile page page
 		driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
 
+		// click cv headline
 		driver.findElement(
 				By.xpath("//div[@class='widgetHead']/span[contains(text(),'Resume headline')]/following-sibling::span"))
 				.click();
@@ -76,19 +82,18 @@ public class IndianLoginNaukriUpdate {
 
 		System.out.println(resumeHeadlineText);
 
-		if (resumeHeadline.equals(resumeHeadlineText)) {
+		//
+		WebElement updateHeadlineText = driver
+				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"));
 
-			driver.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
-					.clear();
-			driver.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
-					.sendKeys(
-							"Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry.");
+		if (resumeHeadline.equals(resumeHeadlineText)) {
+			updateHeadlineText.click();
+			updateHeadlineText.clear();
+			updateHeadlineText.sendKeys(
+					"Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry.");
 		} else {
-			driver.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
-					.clear();
-			driver.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
-					.sendKeys(
-							"Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry");
+			updateHeadlineText.clear();
+			updateHeadlineText.sendKeys(resumeHeadline);
 		}
 	}
 

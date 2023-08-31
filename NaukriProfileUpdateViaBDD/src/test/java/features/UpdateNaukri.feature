@@ -25,3 +25,11 @@ Feature: Update Naukri Profile on multiple Websites
     Examples: 
       | gulfusername                 | gulfpassword  |
       | "sayanbhandari007@gmail.com" | "Opps@sam*95" |
+
+#@naukriProfileResumeUpload
+   #Scenario Outline:3 Update user GulfNaukri profile using International login
+    #Given I have logged in setup and logged in to gulfNaukri website
+    #And have my gulfprofile section open with <gulfusername> login and <gulfpassword>
+    #When I check for gulfprofile section and validate whether updated
+    #Then I update gulfbio with new data
+    #And check whether my gulfprofile is updated as of today
