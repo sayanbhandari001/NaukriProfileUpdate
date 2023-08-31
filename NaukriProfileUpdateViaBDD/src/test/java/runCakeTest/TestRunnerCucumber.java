@@ -13,13 +13,13 @@ import io.cucumber.junit.CucumberOptions;
 		publish = true,
 		monochrome=true,
 		dryRun=false,
-		tags = "@naukriIndiaUpdate"
+		tags = ("@naukriInternationalUpdate")
 		)
  
 public class TestRunnerCucumber {
 	
 }
-//tags = "@naukriIndiaUpdate and @naukriUpdateInternational"
+//tags = ("@naukriIndiaUpdate or @naukriInternationalUpdate")
 
 
 ///update password before running in feature file
