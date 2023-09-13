@@ -24,7 +24,7 @@ public class BrowserUtility {
 //			options.addArguments("--disable-dev-shm-usage");
 			// Set version 116
 			ChromeOptions co = new ChromeOptions();
-			co.setBrowserVersion("116");
+			co.setBrowserVersion("117");
 			//co.addArguments("--headless=new");
 			return new ChromeDriver(co);
 		} else if (browser.equals("firefox")) {

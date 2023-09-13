@@ -82,15 +82,20 @@ public class GulfUpdateNaukriProfile {
 			updateHeadline.click();
 			updateHeadline.clear();
 			updateHeadline.sendKeys("6 Years Exp. with Manual and Automation with Selenium- Java, API testing & DB.");
-		} else {
+		}  
+		else if (!cvHeadline.equals(receivedHeadline)) 
+				{
 			updateHeadline.click();
 			updateHeadline.clear();
 			updateHeadline.sendKeys("6 Years Exp. with Manual and Automation with Selenium- Java, API testing & DB");
 		}
+		else 
+		{
+			throw new RuntimeException("Test Entering Failed//Validation failed");
+		}
 
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	@Then("^I update gulfbio with new data$")
 	public void i_update_gulfbio_with_new_data() {
 		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
@@ -105,7 +110,7 @@ public class GulfUpdateNaukriProfile {
 		String toastPanelExpectedMessage = "Profile updated successfully";
 
 		Assert.assertEquals(toastPanelReceivedMessageValidation, toastPanelExpectedMessage);
-		
+
 		if (toastPanelReceivedMessageValidation.equals(toastPanelExpectedMessage)) {
 			System.out.println("-----------------Save Successfull------------------------");
 
