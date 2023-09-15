@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,11 +17,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class IndianLoginNaukriUpdate {
-
 	WebDriver driver;
+	
 
 	@Given("I have logged in setup and logged in to Naukri website")
 	public void i_have_logged_in_setup_and_logged_in_to_naukri_website() {
+		
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
