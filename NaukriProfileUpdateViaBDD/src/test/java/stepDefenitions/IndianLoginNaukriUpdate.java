@@ -77,7 +77,7 @@ public class IndianLoginNaukriUpdate {
 
 	@When("I check for profile section and validate whether updated")
 	public void i_check_for_profile_section_and_validate_whether_updated() {
-		String resumeHeadline = "Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry";
+		String resumeHeadline = "Experienced Senior Test Analyst proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins, and PowerBI. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting";
 		String resumeHeadlineText = driver
 				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
 				.getText();
@@ -92,7 +92,7 @@ public class IndianLoginNaukriUpdate {
 			updateHeadlineText.click();
 			updateHeadlineText.clear();
 			updateHeadlineText.sendKeys(
-					"Overall 6 Exp. with Manual/Selenium, WebDriver, Java, TestNG, Maven, Jenkins, SVN, API Mobile Testing, Agile, Automation Testing, Manual Testing, Framework Design, SQL, Web Services, Grid, JIRA, Cucumber, GIT. and 5 yrs in Testing Industry.");
+					"Experienced Senior Test Analyst proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins, and PowerBI. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting.");
 		} else {
 			updateHeadlineText.clear();
 			updateHeadlineText.sendKeys(resumeHeadline);

@@ -8,7 +8,7 @@ Feature: Update Naukri Profile on multiple Websites
     Then I update bio with new data
     And check whether my profile is updated as of today
 
-    Examples: 
+    Examples:
       | username                     | password      |
       | "sayanbhandari007@gmail.com" | "Opps@sam*95" |
       | "bhandarisayan@gmail.com"    | "Opps@sam*95" |
