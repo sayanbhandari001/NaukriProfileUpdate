@@ -9,10 +9,10 @@ Feature: Update Naukri Profile on multiple Websites
     And check whether my profile is updated as of today
 
     Examples:
-      | username                     | password      |
-      | "sayanbhandari007@gmail.com" | "Opps@sam*95" |
-      | "bhandarisayan@gmail.com"    | "Opps@sam*95" |
-      | "sayanbhandari001@gmail.com" | "Opps@sam*95" |
+      | username                     | password           |
+      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
+      | "bhandarisayan@gmail.com"    | "T3Bwc0BzYW0qOTU=" |
+      | "sayanbhandari001@gmail.com" | "T3Bwc0BzYW0qOTU=" |
 
   @naukriInternationalUpdate
   Scenario Outline:2 Update user GulfNaukri profile using International login
@@ -22,9 +22,9 @@ Feature: Update Naukri Profile on multiple Websites
     Then I update gulfbio with new data
     And check whether my gulfprofile is updated as of today
 
-    Examples: 
+    Examples:
       | gulfusername                 | gulfpassword  |
-      | "sayanbhandari007@gmail.com" | "Opps@sam*95" |
+      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
 
 #@naukriProfileResumeUpload
    #Scenario Outline:3 Update user GulfNaukri profile using International login

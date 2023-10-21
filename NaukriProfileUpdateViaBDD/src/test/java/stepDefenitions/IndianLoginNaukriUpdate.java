@@ -1,7 +1,7 @@
 package stepDefenitions;
 
 import java.time.Duration;
-
+import java.util.Base64;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +38,10 @@ public class IndianLoginNaukriUpdate {
 	@Given("have my profile section open with {string} login and {string}")
 	public void have_my_profile_section_open_with_login_and(String Username, String Password)
 			throws InterruptedException {
+
+		byte[] decodedBytesPassword = Base64.getDecoder().decode(Password);
+		String decodedPassword = new String(decodedBytesPassword);
+
 		// Username
 		WebElement usenameLogin = driver
 				.findElement(By.xpath("//input[@placeholder='Enter your active Email ID / Username']"));
@@ -49,7 +53,7 @@ public class IndianLoginNaukriUpdate {
 		WebElement passwordLogin = driver
 				.findElement(By.xpath("//input[@type='password' and @placeholder='Enter your password']"));
 		passwordLogin.clear();
-		passwordLogin.sendKeys(Password);
+		passwordLogin.sendKeys(decodedPassword);
 
 		WebDriverWait loginButtonwait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		loginButtonwait.until(ExpectedConditions.elementToBeClickable(By
@@ -66,6 +70,7 @@ public class IndianLoginNaukriUpdate {
 		} else {
 			System.out.println("Opps!!! ----   Sorry Couldn't login   --- Failure");
 		}
+
 		// Redirecting to profile page page
 		driver.get("https://www.naukri.com/mnjuser/profile?id=&altresid");
 

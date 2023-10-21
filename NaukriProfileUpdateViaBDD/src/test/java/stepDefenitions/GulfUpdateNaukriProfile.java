@@ -1,7 +1,7 @@
 package stepDefenitions;
 
 import java.time.Duration;
-
+import java.util.Base64;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,6 +34,9 @@ public class GulfUpdateNaukriProfile {
 	@Given("have my gulfprofile section open with {string} login and {string}")
 	public void have_my_gulfprofile_section_open_with_login_and(String username, String password) throws Throwable {
 
+		byte[] decodedBytesPassword = Base64.getDecoder().decode(Password);
+		String decodedPassword = new String(decodedBytesPassword);
+
 		// Type into on username Button
 		WebElement jobSeekerLogin = driver.findElement(By.xpath("//input[@id='loginModalLoginEmail']"));
 		jobSeekerLogin.clear();
@@ -42,7 +45,7 @@ public class GulfUpdateNaukriProfile {
 		// Type into on Password Button
 		WebElement jobSeekerPassword = driver.findElement(By.xpath("//input[@id='loginPassword']"));
 		jobSeekerPassword.clear();
-		jobSeekerPassword.sendKeys(password);
+		jobSeekerPassword.sendKeys(decodedPassword);
 
 		// click on Innerlogin Button
 		driver.findElement(By.xpath("//button[@id='loginModalLoginSubmit']")).click();
