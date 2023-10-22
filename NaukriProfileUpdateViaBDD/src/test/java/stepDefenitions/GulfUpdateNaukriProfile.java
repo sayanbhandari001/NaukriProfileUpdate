@@ -32,15 +32,15 @@ public class GulfUpdateNaukriProfile {
 	}
 
 	@Given("have my gulfprofile section open with {string} login and {string}")
-	public void have_my_gulfprofile_section_open_with_login_and(String username, String password) throws Throwable {
+	public void have_my_gulfprofile_section_open_with_login_and(String gulfUsername, String gulfPassword) throws Throwable {
 
-		byte[] decodedBytesPassword = Base64.getDecoder().decode(Password);
+		byte[] decodedBytesPassword = Base64.getDecoder().decode(gulfPassword);
 		String decodedPassword = new String(decodedBytesPassword);
 
 		// Type into on username Button
 		WebElement jobSeekerLogin = driver.findElement(By.xpath("//input[@id='loginModalLoginEmail']"));
 		jobSeekerLogin.clear();
-		jobSeekerLogin.sendKeys(username);
+		jobSeekerLogin.sendKeys(gulfUsername);
 
 		// Type into on Password Button
 		WebElement jobSeekerPassword = driver.findElement(By.xpath("//input[@id='loginPassword']"));
