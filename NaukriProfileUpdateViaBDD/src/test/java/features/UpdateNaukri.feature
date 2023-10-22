@@ -11,8 +11,8 @@ Feature: Update Naukri Profile on multiple Websites
     Examples:
       | username                     | password           |
       | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
-      | "bhandarisayan@gmail.com"    | "T3Bwc0BzYW0qOTU=" |
-      | "sayanbhandari001@gmail.com" | "T3Bwc0BzYW0qOTU=" |
+      | "bhandarisayan@gmail.com"    | "U2F5YW5AMDA3" |
+      | "sayanbhandari001@gmail.com" | "TmF1a3JpQDAwN1NheWFu" |
 
   @naukriInternationalUpdate
   Scenario Outline:2 Update user GulfNaukri profile using International login
