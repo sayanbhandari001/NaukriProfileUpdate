@@ -18,11 +18,11 @@ import io.cucumber.java.en.When;
 
 public class IndianLoginNaukriUpdate {
 	WebDriver driver;
-	
+
 
 	@Given("I have logged in setup and logged in to Naukri website")
 	public void i_have_logged_in_setup_and_logged_in_to_naukri_website() {
-		
+
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
@@ -82,6 +82,7 @@ public class IndianLoginNaukriUpdate {
 
 	@When("I check for profile section and validate whether updated")
 	public void i_check_for_profile_section_and_validate_whether_updated() {
+
 		String resumeHeadline = "Experienced Senior Test Analyst proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins, and PowerBI. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting";
 		String resumeHeadlineText = driver
 				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))

@@ -9,9 +9,9 @@ Feature: Update Naukri Profile on multiple Websites
     And check whether my profile is updated as of today
 
     Examples:
-      | username                     | password           |
-      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
-      | "bhandarisayan@gmail.com"    | "U2F5YW5AMDA3" |
+      | username                     | password               |
+      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU="     |
+      | "bhandarisayan@gmail.com"    | "U2F5YW5AMDA3"         |
       | "sayanbhandari001@gmail.com" | "TmF1a3JpQDAwN1NheWFu" |
 
   @naukriInternationalUpdate
@@ -23,7 +23,7 @@ Feature: Update Naukri Profile on multiple Websites
     And check whether my gulfprofile is updated as of today
 
     Examples:
-      | gulfusername                 | gulfpassword  |
+      | gulfusername                 | gulfpassword       |
       | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
 
 #@naukriProfileResumeUpload
