@@ -11,7 +11,7 @@ Feature: Update Naukri Profile on multiple Websites
     Examples:
       | username                     | password                       |
       | "patrafalguni95@gmail.com" 	 | "SmFtQDk1IUpvYnM="             |
-      | "sayanbhandari007@gmail.com" | "TmF1a3JpQDAwN1NheWFu"         |
+      | "sayanbhandari007@gmail.com" | "Sm9iJEBQYXNzIUFsbFBvcnRhbA==" |
       | "bhandarisayan@gmail.com"    | "Sm9iJEBQYXNzIUFsbFBvcnRhbA==" |
       | "sayanbhandari001@gmail.com" | "TmF1a3JpQDAwN1NheWFu"         |
 
