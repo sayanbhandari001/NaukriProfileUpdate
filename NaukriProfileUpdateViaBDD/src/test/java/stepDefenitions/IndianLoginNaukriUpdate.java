@@ -18,11 +18,11 @@ import io.cucumber.java.en.When;
 
 public class IndianLoginNaukriUpdate {
 	WebDriver driver;
-
+	
 
 	@Given("I have logged in setup and logged in to Naukri website")
 	public void i_have_logged_in_setup_and_logged_in_to_naukri_website() {
-
+		
 		driver = BrowserUtility.supplyDriver("chrome");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
@@ -82,8 +82,7 @@ public class IndianLoginNaukriUpdate {
 
 	@When("I check for profile section and validate whether updated")
 	public void i_check_for_profile_section_and_validate_whether_updated() {
-
-		String resumeHeadline = "8+ yrs Experienced Senior Test Engineer proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting.";
+		String resumeHeadline = "Experienced Senior Test Analyst proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins, and PowerBI. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting";
 		String resumeHeadlineText = driver
 				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
 				.getText();
@@ -98,7 +97,31 @@ public class IndianLoginNaukriUpdate {
 			updateHeadlineText.click();
 			updateHeadlineText.clear();
 			updateHeadlineText.sendKeys(
-					"8+ yrs Experienced Senior Test Engineer proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting");
+					"Experienced Senior Test Analyst proficient in Selenium, Java, SQL, and CICD, with skills in TestNG, Maven, GIT, Cucumber, Jenkins, and PowerBI. Expert in Agile & Waterfall SDLC, Performance Testing, and Test Automation Scripting.");
+		} else {
+			updateHeadlineText.clear();
+			updateHeadlineText.sendKeys(resumeHeadline);
+		}
+	}
+
+	@When("I check profile section and validate whether updated for wife")
+	public void i_check_profile_section_and_validate_whether_updated_for_wife() {
+		String resumeHeadline = "Healthcare professional with 6+ years of Exp. in hospital operations, including bed management, patient admissions and discharges, accounts payable, and FOS data management. Experienced in coordinating OPD, IPD, and emergency services, and support.";
+		String resumeHeadlineText = driver
+				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"))
+				.getText();
+
+		System.out.println(resumeHeadlineText);
+
+		//
+		WebElement updateHeadlineText = driver
+				.findElement(By.xpath("//form[@name='resumeHeadlineForm']//div[@class='row']//div//textarea"));
+
+		if (resumeHeadline.equals(resumeHeadlineText)) {
+			updateHeadlineText.click();
+			updateHeadlineText.clear();
+			updateHeadlineText.sendKeys(
+					"Healthcare professional with 6+ years of Exp. in hospital operations, including bed management, patient admissions and discharges, accounts payable, and FOS data management. Experienced in coordinating OPD, IPD, and emergency services, and support");
 		} else {
 			updateHeadlineText.clear();
 			updateHeadlineText.sendKeys(resumeHeadline);
@@ -120,7 +143,23 @@ public class IndianLoginNaukriUpdate {
 			System.out.println("-----------------Save unSuccessfull------------------------");
 		}
 		System.out.println(updatedURL);
+	}
+	
+	@Then("I update bio with new data for wife")
+	public void i_update_bio_with_new_data_for_wife() throws InterruptedException {
+		driver.findElement(By.xpath(
+						"//form[@name='resumeHeadlineForm']//div[@class='row form-actions']//div//button[@type='submit' and contains(text(),'Save')]"))
+				.click();
+		Thread.sleep(2000);
+		String updatedURL = driver.getCurrentUrl();
+		String updatedURLActual = "https://www.naukri.com/mnjuser/profile?id=&altresid";
+		if (updatedURL.equals(updatedURLActual)) {
+			System.out.println("-----------------Save Successfull------------------------");
 
+		} else {
+			System.out.println("-----------------Save unSuccessfull------------------------");
+		}
+		System.out.println(updatedURL);
 	}
 
 	@Then("check whether my profile is updated as of today")
