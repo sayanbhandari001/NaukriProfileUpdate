@@ -14,17 +14,17 @@ Feature: Update Naukri Profile on multiple Websites
       | "bhandarisayan@gmail.com"    | "Sm9iJEBQYXNzIUFsbFBvcnRhbA==" |
       | "sayanbhandari001@gmail.com" | "TmF1a3JpQDAwN1NheWFu"         |
 
-#  @naukriInternationalUpdate
-#  Scenario Outline:2 Update user GulfNaukri profile using International login
-#    Given I have logged in setup and logged in to gulfNaukri website
-#    And have my gulfprofile section open with <gulfusername> login and <gulfpassword>
-#    When I check for gulfprofile section and validate whether updated
-#    Then I update gulfbio with new data
-#    And check whether my gulfprofile is updated as of today
-#
-#    Examples:
-#      | gulfusername                 | gulfpassword       |
-#      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTE=" |
+ @naukriInternationalUpdate
+  Scenario Outline:2 Update user GulfNaukri profile using International login
+    Given I have logged in setup and logged in to gulfNaukri website
+    And have my gulfprofile section open with <gulfusername> login and <gulfpassword>
+    When I check for gulfprofile section and validate whether updated
+    Then I update gulfbio with new data
+    And check whether my gulfprofile is updated as of today
+
+    Examples:
+      | gulfusername                 | gulfpassword  |
+      | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
 
 #@naukriProfileResumeUpload
    #Scenario Outline:3 Update user GulfNaukri profile using International login
@@ -33,8 +33,3 @@ Feature: Update Naukri Profile on multiple Websites
     #When I check for gulfprofile section and validate whether updated
     #Then I update gulfbio with new data
     #And check whether my gulfprofile is updated as of today
-
-
-
-
-
