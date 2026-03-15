@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 		publish = true,
 		monochrome=true,
 		dryRun=false,
-		tags = ("@naukriIndiaUpdate or @naukriInternationalUpdate")
+		tags = ("@naukriIndiaUpdate or @naukriInternationalUpdate or @naukriIndiaUpdateWife")
 		)
  
 public class TestRunnerCucumber {

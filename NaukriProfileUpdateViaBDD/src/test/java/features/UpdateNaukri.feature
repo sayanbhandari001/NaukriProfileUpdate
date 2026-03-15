@@ -26,6 +26,18 @@ Feature: Update Naukri Profile on multiple Websites
       | gulfusername                 | gulfpassword  |
       | "sayanbhandari007@gmail.com" | "T3Bwc0BzYW0qOTU=" |
 
+  @naukriIndiaUpdateWife
+  Scenario Outline:3 Update user Naukri profile using allIndian login for wife
+    Given I have logged in setup and logged in to Naukri website
+    And have my profile section open with <username> login and <password>
+    When I check profile section and validate whether updated for wife
+    Then I update bio with new data for wife
+    And check whether my profile is updated as of today
+
+    Examples:
+      | username | password                       |
+      | "patrafalguni95@gmail.com"       | "SmFtQDk1IUpvYnM=" |
+
 #@naukriProfileResumeUpload
    #Scenario Outline:3 Update user GulfNaukri profile using International login
     #Given I have logged in setup and logged in to gulfNaukri website
